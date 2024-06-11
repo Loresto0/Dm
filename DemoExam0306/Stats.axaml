@@ -1,0 +1,79 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1920" d:DesignHeight="1060"
+        x:Class="DemoExam0306.Stats"
+        x:CompileBindings="False"
+        MaxWidth="1920"
+        MaxHeight="1060"
+        WindowStartupLocation="CenterScreen"
+        Title="Окно статистики">
+    <Grid ColumnDefinitions="*,*,*,*,8,*,*,*,*,*,*"
+          RowDefinitions="*,*,*,*,8,*,*,*,*,*,*">
+        
+        <TextBlock Grid.Row="1"
+                   Grid.Column="3"
+                   Grid.ColumnSpan="6"
+                   FontSize="22"
+                   Text="ООО Техносервис">
+        </TextBlock>
+        
+        <Border Grid.Row="2"
+                Grid.RowSpan="8"
+                Grid.Column="1"
+                BorderBrush="Black"
+                CornerRadius="15"
+                BorderThickness="2"
+                Grid.ColumnSpan="9">
+            <Grid ColumnDefinitions="*,*,*,*,*,*,*,*"
+                  RowDefinitions="*,*,*,*,*,*,*,*">
+                
+                <TextBlock Grid.Row="1"
+                           Grid.Column="1"
+                           Grid.ColumnSpan="6"
+                           Name="CountApplic"
+                           FontSize="52">
+                </TextBlock>
+                
+                <TextBlock Grid.Row="2"
+                           Grid.Column="1"
+                           Grid.ColumnSpan="6"
+                           Name="TimeApplic"
+                           Text="Среднее время выполнения заявки: 2 часа"
+                           FontSize="52">
+                </TextBlock>
+                
+                <TextBlock Grid.Row="3"
+                           Grid.Column="1"
+                           Grid.ColumnSpan="6"
+                           Name="TypeAppliStat"
+                           FontSize="52">
+                </TextBlock>
+                
+                <TextBlock Grid.Row="4"
+                           Grid.Column="1"
+                           Grid.ColumnSpan="6"
+                           Name="TypeAppliStatbattery"
+                           FontSize="52">
+                </TextBlock>
+                
+                <TextBlock Grid.Row="5"
+                           Grid.Column="1"
+                           Grid.ColumnSpan="6"
+                           Name="TypeAppliStatdontopen"
+                           FontSize="52">
+                </TextBlock>
+            </Grid>
+        </Border>
+
+        <Button Grid.Row="10"
+                Grid.Column="8"
+                Margin="10"
+                Content="Выйти"
+                Click="Back_OnClick"
+                Grid.ColumnSpan="2"
+                Name="Back">
+        </Button>
+    </Grid>
+</Window>

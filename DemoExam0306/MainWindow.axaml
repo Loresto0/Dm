@@ -1,0 +1,309 @@
+
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1920" d:DesignHeight="1060"
+        x:Class="DemoExam0306.MainWindow"
+        x:CompileBindings="False"
+        MaxWidth="1920"
+        MaxHeight="1060"
+        WindowStartupLocation="CenterScreen"
+        Title="Главное окно">
+    <Grid ColumnDefinitions="*,*,*,*,*,*,*,*,*,*,*,*,*,*"
+          RowDefinitions="*,*,*,*,*,*,*,*,*,*,*,*,*,*">
+        
+        <TextBlock Grid.Row="1"
+                   Grid.Column="3"
+                   Grid.ColumnSpan="6"
+                   FontSize="22"
+                   Text="ООО Техносервис">
+        </TextBlock>
+        
+        <TextBlock Grid.Row="2"
+                   Grid.Column="3"
+                   Grid.ColumnSpan="6"
+                   FontSize="32"
+                   Text="Список заявок">
+        </TextBlock>
+        
+        <TextBox Grid.Row="0"
+                   Grid.Column="9"
+                   Grid.ColumnSpan="4"
+                   FontSize="22"
+                   Margin="15"
+                   Name="SearchBox"
+                   KeyUp="InputElement_OnKeyUp"
+                   Watermark="Введите для поиска"
+                   >
+        </TextBox>
+        
+        <ListBox Grid.Row="3"
+                 Grid.RowSpan="8"
+                 Grid.ColumnSpan="6"
+                 Grid.Column="1"
+                 Name="ListApplication">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal"></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions="*,*"
+                          RowDefinitions="*,*,*,*,*,*,*,*,*">
+                        <TextBlock Grid.Row="0"
+                                   Grid.Column="0"
+                                   Text="Номер заявки: ">
+                        </TextBlock>
+                        
+                        <TextBlock Grid.Row="0"
+                                   Grid.Column="1"
+                                   Text="{Binding Numberapplication}">
+                        </TextBlock>
+                        
+                        <TextBlock Grid.Row="1"
+                                   Grid.Column="0"
+                                   Text="Дата добавления: ">
+                        </TextBlock>
+                        
+                        <TextBlock Grid.Row="1"
+                                   Grid.Column="1"
+                                   Text="{Binding Dateaddapllication}">
+                        </TextBlock>
+                        
+                        <TextBlock Grid.Row="2"
+                                   Grid.RowSpan="2"
+                                   Grid.Column="0"
+                                   Text="Оборудование: ">
+                        </TextBlock>
+                        
+                        <TextBlock Grid.Row="2"
+                                   Grid.Column="1"
+                                   Grid.RowSpan="2"
+                                   TextWrapping="Wrap"
+                                   Text="{Binding Rent}">
+                        </TextBlock>
+                        
+                        <TextBlock Grid.Row="4"
+                                   Grid.Column="0"
+                                   Text="Тип неисправности: ">
+                        </TextBlock>
+                        
+                        <TextBlock Grid.Row="4"
+                                   Grid.Column="1"
+                                   TextWrapping="Wrap"
+                                   Text="{Binding TypeNav}">
+                        </TextBlock>
+                        
+                        <TextBlock Grid.Row="5"
+                                   Grid.Column="0"
+                                   Text="Клиент">
+                        </TextBlock>
+                        
+                        <TextBlock Grid.Row="5"
+                                   Grid.Column="1"
+                                   TextWrapping="Wrap"
+                                   Text="{Binding ClientNav}">
+                        </TextBlock>
+                        
+                        <TextBlock Grid.Row="6"
+                                   Grid.Column="0"
+                                   Text="Статус: ">
+                        </TextBlock>
+                        
+                        <TextBlock Grid.Row="6"
+                                   Grid.Column="1"
+                                   TextWrapping="Wrap"
+                                   Text="{Binding StatusNav}">
+                        </TextBlock>
+                        
+                        <TextBlock Grid.Row="7"
+                                   Grid.Column="0"
+                                   Text="Исполнитель: ">
+                        </TextBlock>
+                        
+                        <TextBlock Grid.Row="7"
+                                   Grid.Column="1"
+                                   TextWrapping="Wrap"
+                                   Text="{Binding IspolNav}">
+                        </TextBlock>
+                        
+                        <Button Grid.Row="8"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2"
+                                Content="Редактировать"
+                                Height="40"
+                                Click="Button_OnClick"
+                                Tag="{Binding Id}"></Button>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
+          <ListBox Grid.Row="3"
+                 Grid.RowSpan="8"
+                 Grid.ColumnSpan="12"
+                 Grid.Column="1"
+                 IsVisible="False"
+                 Name="ListToClient">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal"></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions="*,*"
+                          RowDefinitions="*,*,*,*,*,*,*,*,*">
+                        <TextBlock Grid.Row="0"
+                                   Grid.Column="0"
+                                   Text="Номер заявки: ">
+                        </TextBlock>
+                        
+                        <TextBlock Grid.Row="0"
+                                   Grid.Column="1"
+                                   Text="{Binding Numberapplication}">
+                        </TextBlock>
+                        
+                        <TextBlock Grid.Row="1"
+                                   Grid.Column="0"
+                                   Text="Дата добавления: ">
+                        </TextBlock>
+                        
+                        <TextBlock Grid.Row="1"
+                                   Grid.Column="1"
+                                   Text="{Binding Dateaddapllication}">
+                        </TextBlock>
+                        
+                        <TextBlock Grid.Row="2"
+                                   Grid.RowSpan="2"
+                                   Grid.Column="0"
+                                   Text="Оборудование: ">
+                        </TextBlock>
+                        
+                        <TextBlock Grid.Row="2"
+                                   Grid.Column="1"
+                                   Grid.RowSpan="2"
+                                   TextWrapping="Wrap"
+                                   Text="{Binding Rent}">
+                        </TextBlock>
+                        
+                        <TextBlock Grid.Row="4"
+                                   Grid.Column="0"
+                                   Text="Тип неисправности: ">
+                        </TextBlock>
+                        
+                        <TextBlock Grid.Row="4"
+                                   Grid.Column="1"
+                                   TextWrapping="Wrap"
+                                   Text="{Binding TypeNav}">
+                        </TextBlock>
+                        
+                        <TextBlock Grid.Row="5"
+                                   Grid.Column="0"
+                                   Text="Клиент">
+                        </TextBlock>
+                        
+                        <TextBlock Grid.Row="5"
+                                   Grid.Column="1"
+                                   TextWrapping="Wrap"
+                                   Text="{Binding ClientNav}">
+                        </TextBlock>
+                        
+                        <TextBlock Grid.Row="6"
+                                   Grid.Column="0"
+                                   Text="Статус: ">
+                        </TextBlock>
+                        
+                        <TextBlock Grid.Row="6"
+                                   Grid.Column="1"
+                                   TextWrapping="Wrap"
+                                   Text="{Binding StatusNav}">
+                        </TextBlock>
+                        
+                        <TextBlock Grid.Row="7"
+                                   Grid.Column="0"
+                                   Text="Исполнитель: ">
+                        </TextBlock>
+                        
+                        <TextBlock Grid.Row="7"
+                                   Grid.Column="1"
+                                   TextWrapping="Wrap"
+                                   Text="{Binding IspolNav}">
+                        </TextBlock>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+
+        <TextBlock Grid.Row="2"
+                   Grid.Column="8"
+                   Grid.ColumnSpan="6"
+                   FontSize="32"
+                   TextAlignment="Center"
+                   IsVisible="False"
+                   Name="NotificationText"
+                   Text="Уведомления">
+        </TextBlock>
+        
+        <ListBox Grid.Row="3"
+                 Grid.RowSpan="8"
+                 Grid.ColumnSpan="5"
+                 Grid.Column="8"
+                 IsVisible="False"
+                 Name="Notifications">
+
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions="*,*,*,*"
+                          RowDefinitions="*">
+                        <TextBlock Grid.Column="0"
+                                   Grid.Row="0"
+                                   Text="{Binding GetNumberApplication}">
+                        </TextBlock>
+                        
+                        <TextBlock Grid.Column="1"
+                                   Grid.Row="0"
+                                   Text="{Binding GetStatus}">
+                        </TextBlock>
+                        
+                        <TextBlock Grid.Column="2"
+                                   Grid.ColumnSpan="2"
+                                   Grid.Row="0"
+                                   Text="{Binding GetNameEmploye}">
+                        </TextBlock>
+
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
+        <Button Grid.Row="12"
+                Grid.Column="5"
+                Content="Добавить заявку"
+                Grid.ColumnSpan="2"
+                IsVisible="False"
+                Name="NewApplication"
+                Click="NewApplication_OnClick"></Button>
+        
+        <Button Grid.Row="12"
+                Grid.Column="2"
+                Content="Статистика отдела"
+                Grid.ColumnSpan="2"
+                IsVisible="False"
+                Click="CheckStats_OnClick"
+                Name="CheckStats"></Button>
+        
+        <Button Grid.Row="12"
+                Grid.Column="8"
+                Margin="10"
+                Content="Выйти"
+                Click="Back_OnClick"
+                Grid.ColumnSpan="2"
+                Name="Back">
+        </Button>
+        
+    </Grid>
+</Window>
